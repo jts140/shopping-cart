@@ -39,4 +39,25 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
-print(products)
+# info capture/ input
+input("Please input a product idendtifier:")
+
+
+#info display
+
+
+
+
+
+
+
+#print(products)
+
+#store name of choice
+#store phone number and/or website url and/or location
+#date and time at the beggining of the process
+#name and price of each item with formatted price
+#amount of tax owed
+#the total cost, formatted as usd
+#friendly message
+
