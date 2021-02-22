@@ -40,8 +40,10 @@ def to_usd(my_price):
 # TODO: write some Python code here to produce the desired output
 
 # info capture/ input
-input("Please input a product idendtifier:")
+selected_id = input("Please input a product idendtifier:") # value is stored as a string
 
+print(selected_id)
+print(type(selected_id))
 
 #info display
 
