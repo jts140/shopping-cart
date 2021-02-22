@@ -42,8 +42,18 @@ def to_usd(my_price):
 # info capture/ input
 selected_id = input("Please input a product idendtifier:") # value is stored as a string
 
-print(selected_id)
-print(type(selected_id))
+
+matching_products = [p for p in products if str(p["id"])== str(selected_id)] #plural because returns the whole list
+
+matching_product = matching_products[0]
+#singular, returns one part of the list
+
+print("SELECTED PRODUCT: " + matching_product["name"] + " "  + str(matching_product["price"]))
+
+
+print(matching_product)
+print(type(matching_product))
+
 
 #info display
 
