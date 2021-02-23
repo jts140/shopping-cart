@@ -53,7 +53,9 @@ while True:
 
     if selected_id.upper() =="DONE":
         break
-    elif int(selected_id) <= products[-1]["id"]:
+    elif int(selected_id) >= products[-1]["id"]:
+        print("WARNING: please enter a valid product code")
+    else:
         selected_ids.append(selected_id)
        
 #Build receipt
