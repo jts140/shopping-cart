@@ -69,20 +69,36 @@ for selected_id in selected_ids:
 #print(selected_ids)
 
 
+#Build receipt
 
-#format as USD!!!!!!
-print("TOTAL PRICE: " + str(total_price))
+#store name
+print("---------------------------------")
+print("Store Name Placeholder")
+print("Phone Number and/or website")
 
+#checkout time ADD FUNCTIONALITY
+print("---------------------------------")
+print("CHECKOUT AT:")
 
+#Print selected products
+print("---------------------------------")
 
+#####
 
+#Print subtotal, tax and total
+#format all values as USD!!!!!!
+print("---------------------------------")
 
+print("SUBTOTAL: " + str(total_price))
 
-#store name of choice
-#store phone number and/or website url and/or location
-#date and time at the beggining of the process
-#name and price of each item with formatted price
-#amount of tax owed
-#the total cost, formatted as usd
-#friendly message
+#possibly add dynamic rate
+tax = total_price*.08
 
+print("TAX: " + str(tax))
+
+final_price = tax + total_price
+print("TOTAL: " + str(final_price))
+
+#Final Message
+print("---------------------------------")
+print("THANKS FOR SHOPPING WITH US")
