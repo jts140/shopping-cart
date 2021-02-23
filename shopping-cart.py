@@ -38,6 +38,7 @@ def to_usd(my_price):
 
 
 # TODO: write some Python code here to produce the desired output
+print(products)
 
 #store time at the beggining of checkout
 from datetime import datetime
@@ -50,12 +51,15 @@ selected_ids = []
 while True:
 
     # info capture/ input
-    selected_id = input("Please input a product idendtifier or 'DONE' if there are no more items:") # value is stored as a string
-
-    if selected_id =="DONE":
+    selected_id = (input("Please input a product idendtifier or 'DONE' if there are no more items:")
+    
+    if selected_id.lower() == "done":
         break
     else:
         selected_ids.append(selected_id)
+        #added if so it does not include numbers outside the range
+        #if selected_id <= products[1][-1]:
+     
        
 #Build receipt
 
@@ -73,8 +77,11 @@ print("---------------------------------")
 
 #info display
 
+#ASK ABOUT FAILING GRACEFULLY
 for selected_id in selected_ids:
-    matching_products = [p for p in products if str(p["id"])== str(selected_id)] #plural because returns the whole list
+    matching_products = [p for p in products if str(p["id"])== str(selected_id)] 
+    #plural because returns the whole list
+    
     matching_product = matching_products[0] #singular, returns one part of the list
     
     total_price = total_price + matching_product["price"]
