@@ -45,30 +45,13 @@ selected_ids = []
 while True:
 
     # info capture/ input
-    selected_id = input("Please input a product idendtifier:") # value is stored as a string
+    selected_id = input("Please input a product idendtifier or 'DONE' if there are no more items:") # value is stored as a string
 
     if selected_id =="DONE":
         break
     else:
         selected_ids.append(selected_id)
        
-      
-
-#info display
-
-for selected_id in selected_ids:
-    matching_products = [p for p in products if str(p["id"])== str(selected_id)] #plural because returns the whole list
-    matching_product = matching_products[0] #singular, returns one part of the list
-    
-    total_price = total_price + matching_product["price"]
-    
-    print("SELECTED PRODUCT: " + matching_product["name"] + " "  + str(matching_product["price"]))
-
-
-
-#print(selected_ids)
-
-
 #Build receipt
 
 #store name
@@ -82,6 +65,15 @@ print("CHECKOUT AT:")
 
 #Print selected products
 print("---------------------------------")
+#info display
+
+for selected_id in selected_ids:
+    matching_products = [p for p in products if str(p["id"])== str(selected_id)] #plural because returns the whole list
+    matching_product = matching_products[0] #singular, returns one part of the list
+    
+    total_price = total_price + matching_product["price"]
+    
+    print("SELECTED PRODUCT: " + matching_product["name"] + " "  + str(matching_product["price"]))
 
 #####
 
