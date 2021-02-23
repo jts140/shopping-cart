@@ -38,6 +38,10 @@ def to_usd(my_price):
 
 
 # TODO: write some Python code here to produce the desired output
+
+from dotenv import load_dotenv # see: https://github.com/theskumar/python-dotenv
+
+
 #store time at the beggining of checkout
 from datetime import datetime
 now = datetime.now()
