@@ -40,7 +40,8 @@ def to_usd(my_price):
 # TODO: write some Python code here to produce the desired output
 
 from dotenv import load_dotenv # see: https://github.com/theskumar/python-dotenv
-
+load_dotenv()
+TAX_RATE = os.getenv("TAX_RATE", default=.08)
 
 #store time at the beggining of checkout
 from datetime import datetime
@@ -92,7 +93,7 @@ print("---------------------------------")
 print("SUBTOTAL: " + str(to_usd(total_price)))
 
 #possibly add dynamic rate
-tax = total_price*.08
+tax = total_price * '{TAX_RATE}'
 
 print("PLUS TAX: " + str(to_usd(tax)))
 
