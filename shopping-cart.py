@@ -38,7 +38,6 @@ def to_usd(my_price):
 
 
 # TODO: write some Python code here to produce the desired output
-
 #store time at the beggining of checkout
 from datetime import datetime
 now = datetime.now()
@@ -54,7 +53,7 @@ while True:
 
     if selected_id.upper() =="DONE":
         break
-    else:
+    elif int(selected_id) <= products[-1]["id"]:
         selected_ids.append(selected_id)
        
 #Build receipt
