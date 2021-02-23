@@ -52,7 +52,7 @@ while True:
     # info capture/ input
     selected_id = input("Please input a product idendtifier or 'DONE' if there are no more items:") # value is stored as a string
 
-    if selected_id =="DONE":
+    if selected_id.upper() =="DONE":
         break
     else:
         selected_ids.append(selected_id)
