@@ -65,6 +65,7 @@ print("CHECKOUT AT:")
 
 #Print selected products
 print("---------------------------------")
+
 #info display
 
 for selected_id in selected_ids:
@@ -74,8 +75,6 @@ for selected_id in selected_ids:
     total_price = total_price + matching_product["price"]
     
     print("SELECTED PRODUCT: " + matching_product["name"] + " ("  + str(to_usd(matching_product["price"])) + ")")
-
-#####
 
 #Print subtotal, tax and total
 print("---------------------------------")
@@ -92,4 +91,4 @@ print("TOTAL: " + str(to_usd(final_price)))
 
 #Final Message
 print("---------------------------------")
-print("THANKS FOR SHOPPING WITH US")
+print("THANKS FOR SHOPPING WITH US!")
