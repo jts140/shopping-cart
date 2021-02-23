@@ -73,23 +73,22 @@ for selected_id in selected_ids:
     
     total_price = total_price + matching_product["price"]
     
-    print("SELECTED PRODUCT: " + matching_product["name"] + " "  + str(matching_product["price"]))
+    print("SELECTED PRODUCT: " + matching_product["name"] + " ("  + str(to_usd(matching_product["price"])) + ")")
 
 #####
 
 #Print subtotal, tax and total
-#format all values as USD!!!!!!
 print("---------------------------------")
 
-print("SUBTOTAL: " + str(total_price))
+print("SUBTOTAL: " + str(to_usd(total_price)))
 
 #possibly add dynamic rate
 tax = total_price*.08
 
-print("TAX: " + str(tax))
+print("PLUS TAX: " + str(to_usd(tax)))
 
 final_price = tax + total_price
-print("TOTAL: " + str(final_price))
+print("TOTAL: " + str(to_usd(final_price)))
 
 #Final Message
 print("---------------------------------")
