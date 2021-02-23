@@ -39,6 +39,8 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
+#setting up tax rate extra credit
+import os
 from dotenv import load_dotenv # see: https://github.com/theskumar/python-dotenv
 load_dotenv()
 TAX_RATE = os.getenv("TAX_RATE", default=.08)
@@ -67,8 +69,8 @@ while True:
 
 #store name
 print("---------------------------------")
-print("Store Name Placeholder")
-print("Phone Number and/or website")
+print("Safeway Inc.")
+print("https://www.safeway.com/")
 
 #checkout time ADD FUNCTIONALITY
 print("---------------------------------")
@@ -92,8 +94,7 @@ print("---------------------------------")
 
 print("SUBTOTAL: " + str(to_usd(total_price)))
 
-#possibly add dynamic rate
-tax = total_price * '{TAX_RATE}'
+tax = total_price * float(TAX_RATE)
 
 print("PLUS TAX: " + str(to_usd(tax)))
 
