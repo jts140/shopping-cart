@@ -39,6 +39,11 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
+#store time at the beggining of checkout
+from datetime import datetime
+now = datetime.now()
+
+
 total_price = 0 
 selected_ids = []
 
@@ -61,7 +66,7 @@ print("Phone Number and/or website")
 
 #checkout time ADD FUNCTIONALITY
 print("---------------------------------")
-print("CHECKOUT AT:")
+print("CHECKOUT AT: " + (now.strftime("%Y-%m-%d %H:%M:%S")))
 
 #Print selected products
 print("---------------------------------")
