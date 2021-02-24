@@ -58,9 +58,9 @@ while True:
     # info capture/ input
     selected_id = input("Please input a product idendtifier or 'DONE' if there are no more items:") # value is stored as a string
 
-    if selected_id.upper() =="DONE":
+    if selected_id.upper() == "DONE":
         break
-    elif int(selected_id) >= products[-1]["id"]:
+    elif int(selected_id) > products[-1]["id"] or int(selected_id) < products[0]["id"] :
         print("WARNING: please enter a valid product code")
     else:
         selected_ids.append(selected_id)
@@ -80,6 +80,12 @@ print("CHECKOUT AT: " + (now.strftime("%Y-%m-%d %H:%M:%S")))
 print("---------------------------------")
 
 #info display
+if len(selected_ids) == 0:
+    print("NO PRODUCTS SELECTED")
+elif len(selected_ids) == 1:
+    print("SELECTED PRODUCT: ")
+elif len(selected_ids) > 1:
+    print("SELECTED PRODUCTS: ")
 
 for selected_id in selected_ids:
     matching_products = [p for p in products if str(p["id"])== str(selected_id)] #plural because returns the whole list
@@ -87,7 +93,7 @@ for selected_id in selected_ids:
     
     total_price = total_price + matching_product["price"]
     
-    print("SELECTED PRODUCT: " + matching_product["name"] + " ("  + str(to_usd(matching_product["price"])) + ")")
+    print("... " + matching_product["name"] + " ("  + str(to_usd(matching_product["price"])) + ")")
 
 #Print subtotal, tax and total
 print("---------------------------------")
@@ -99,6 +105,7 @@ tax = total_price * float(TAX_RATE)
 print("PLUS TAX: " + str(to_usd(tax)))
 
 final_price = tax + total_price
+
 print("TOTAL: " + str(to_usd(final_price)))
 
 #Final Message
