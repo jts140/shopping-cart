@@ -60,6 +60,8 @@ while True:
 
     if selected_id.upper() == "DONE":
         break
+    elif selected_id.upper() != "DONE" and selected_id.isnumeric() == False:
+        print("WARNING: please enter a valid product code or done")
     elif int(selected_id) > products[-1]["id"] or int(selected_id) < products[0]["id"] :
         print("WARNING: please enter a valid product code")
     else:
