@@ -1,6 +1,6 @@
 # Shopping Cart Project
 
-A program where user can enter product codes for groceries and determine the after tax price they will pay
+A program where a user can enter product codes for groceries and determine the after tax price they will pay
 
 (https://github.com/jts140/shopping-cart)
 
